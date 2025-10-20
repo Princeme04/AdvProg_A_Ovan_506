@@ -22,7 +22,7 @@ public class DocumentationExample {
      */
     public static void main(String[] args) {
         // Declare two string variables
-        String kalimat1 = "saya bapak tet"; // kalimat1
+        String kalimat1 = "saya bapak tetangga"; // kalimat1
         String kalimat2 = "saya ibu budi";   // kalimat2
 
         // Display the concatenated sentences to the console
