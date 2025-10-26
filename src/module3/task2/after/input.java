@@ -1,4 +1,4 @@
-package module2.task.task3.after;
+package module3.task2.after;
 
 public class input {
     // 4. Extracted input reading with validation

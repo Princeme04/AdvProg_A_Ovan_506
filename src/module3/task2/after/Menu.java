@@ -1,4 +1,4 @@
-package module2.task.task3.after;
+package module3.task2.after;
 
 public class Menu {
     // 3. Extracted menu display (now using println)
