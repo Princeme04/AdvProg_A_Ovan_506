@@ -2,19 +2,37 @@ package module3.task2.after;
 
 import java.util.Scanner;
 
+/**
+ * Main application class for the Todo List application.
+ * This class provides a command-line interface for managing a simple todo list
+ * with options to add tasks, view tasks, and exit the application.
+ *
+ * @author Princem3
+ * @version 1.0
+ * @since 2024
+ */
 public class TodoListApp {
-    // 1. Rename variables to be clear
+
+    /**
+     * Scanner instance for reading user input from console.
+     * Shared across the application for all input operations.
+     */
     public static final Scanner scanner = new Scanner(System.in);
 
-    // (Removed MENU_TEXT constant — using println instead)
-
+    /**
+     * Main entry point of the Todo List application.
+     * Displays a menu and processes user choices in an infinite loop
+     * until the user chooses to exit.
+     *
+     * @param args command line arguments (not used)
+     */
     public static void main(String[] args) {
         while (true) {
-            Menu.showMenu(); // 3. Extract method: showMenu
-            int choice = input.readChoice(); // 4. Extract method: readChoice
+            Menu.showMenu();
+            int choice = input.readChoice();
 
             if (choice == 1) {
-                TaskManager.addTask(); // 5. Extract method: addTask
+                TaskManager.addTask();
             } else if (choice == 2) {
                 TaskManager.showTasks();
             } else if (choice == 3) {
@@ -25,5 +43,4 @@ public class TodoListApp {
             }
         }
     }
-
 }

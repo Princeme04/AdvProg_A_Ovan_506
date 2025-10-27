@@ -1,39 +1,65 @@
 package module3.task1;
 
+/*
+ * Simple Food Order Receipt Application
+ * Task 1 - Demonstration of attributes, methods, and live templates
+ * Author: [Your Name]
+ */
+
+import java.util.Scanner;
+
 public class FoodOrderApp {
-    // Attributes
+
+    //Attributes
     String foodName;
     int quantity;
     double pricePerItem;
+    double totalPrice;
 
-    // Constructor
     public FoodOrderApp(String foodName, int quantity, double pricePerItem) {
         this.foodName = foodName;
         this.quantity = quantity;
         this.pricePerItem = pricePerItem;
+        this.totalPrice = calculateTotal(); // Using method to calculate total
     }
 
-    // Method to calculate total price
     public double calculateTotal() {
-        return quantity * pricePerItem;
+        // Live Template example: calc -> total = pricePerItem * quantity;
+       double total = pricePerItem * quantity;
+       System.out.println("Total: ");
+       return total;
     }
 
-    // Method to print receipt
+
     public void printReceipt() {
-        System.out.println("=== Restaurant Order Receipt ===");
-        System.out.println("Food Name   : " + foodName);
-        System.out.println("Quantity    : " + quantity);
-        System.out.println("Price/Item  : $" + pricePerItem);
-        System.out.println("-------------------------------");
-        System.out.println("Total Price : $" + calculateTotal());
-        System.out.println("===============================");
+        System.out.println("----- RECEIPT -----"); // sout
+        System.out.println("Item: " + foodName);
+        System.out.println("Quantity: " + quantity);
+        System.out.println("Price per Item: $" + pricePerItem);
+        System.out.println("Total Price: $" + totalPrice);
+        System.out.println("-------------------");
     }
 
-    // Main method (entry point)
-    public static void main(String[] args) {
-        // Example order
-        FoodOrderApp order1 = new FoodOrderApp("Nasi Goreng", 2, 3.50);
-        order1.printReceipt();
+    //Main Method (psvm)
+    public static void main(String[] args) { // psvm
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Enter food name: "); // sout
+        String name = input.nextLine();
+
+        System.out.println("Enter quantity: ");
+        int qty = input.nextInt();
+
+        System.out.println("Enter price per item: ");
+        double price = input.nextDouble();
+
+        // Create object
+        FoodOrderApp order = new FoodOrderApp(name, qty, price);
+
+        // Print receipt
+        order.printReceipt();
+
+        input.close();
     }
 }
 
